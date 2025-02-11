@@ -1,31 +1,23 @@
 export interface WeatherResponse {
-  current : {
+  main: {
     temp: number;
-    feels_like : number ;
-    humidity : number ;
-    wind_speed : number ;
-    weather :{
-      main : string;
-      description :string ;
-      icon :string;
-    }[];
+    feels_like: number;
+    humidity: number;
+    temp_min: number;
+    temp_max: number;
   };
-  daily: {
-    dt:number;
-    temp : {
-      day: number;
-      min:number;
-      max: number;
-    };
-    weather : {
-      main:string;
-      description : string ;
-      icon : string ;
-    }[];
+  weather: {
+    main: string;
+    description: string;
+    icon: string;
   }[];
+  wind: {
+    speed: number;
+  };
+  name: string;
 }
 
 export interface WeatherError {
-  cod: string ;
-  message : string;
+  cod: string;
+  message: string;
 }

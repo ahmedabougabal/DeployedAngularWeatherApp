@@ -19,6 +19,6 @@ const productionEnviromentFIle = `export const enviroment = {
   }
 }`;
 
-fs.writeFileSync('src/environments/environment.ts', enviromentFile);
-fs.writeFileSync('src/environments/environment.development.ts', enviromentFile);
-fs.writeFileSync('src/environments/environment.prod.ts', productionEnviromentFIle);
+fs.writeFileSync('src/enviroments/environment.ts', enviromentFile);
+fs.writeFileSync('src/enviroments/environment.development.ts', enviromentFile);
+fs.writeFileSync('src/enviroments/environment.prod.ts', productionEnviromentFIle);

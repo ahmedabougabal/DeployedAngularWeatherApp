@@ -10,63 +10,203 @@ import { WeatherResponse } from '../../interfaces/weather.interface';
   imports: [CommonModule, MatCardModule, MatIconModule],
   template: `
     <div class="weather-container" *ngIf="weather">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>{{ weather.name }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <div class="weather-info">
+      <div class="weather-header">
+        <h2>{{ weather.name }}</h2>
+        <p class="date">{{ getCurrentDate() }}</p>
+      </div>
+
+      <div class="weather-content">
+        <div class="main-weather">
+          <div class="temperature-display">
+            <span class="temp-value">{{ weather.main.temp | number:'1.0-0' }}°</span>
+            <span class="temp-unit">C</span>
+          </div>
+          <div class="weather-icon">
             <img [src]="getWeatherIcon(weather.weather[0].icon)" [alt]="weather.weather[0].description">
-            <div class="temperature">{{ weather.main.temp }}°C</div>
-            <div class="description">{{ weather.weather[0].description }}</div>
-            <div class="details">
-              <div>Feels like: {{ weather.main.feels_like }}°C</div>
-              <div>Humidity: {{ weather.main.humidity }}%</div>
-              <div>Wind: {{ weather.wind.speed }} m/s</div>
-            </div>
-            <div class="temp-range">
-              <span>Min: {{ weather.main.temp_min }}°C</span>
-              <span>Max: {{ weather.main.temp_max }}°C</span>
+            <p class="weather-description">{{ weather.weather[0].description }}</p>
+          </div>
+        </div>
+
+        <div class="weather-details">
+          <div class="detail-card">
+            <mat-icon>thermostat</mat-icon>
+            <div class="detail-info">
+              <span class="label">Feels Like</span>
+              <span class="value">{{ weather.main.feels_like | number:'1.0-0' }}°C</span>
             </div>
           </div>
-        </mat-card-content>
-      </mat-card>
+
+          <div class="detail-card">
+            <mat-icon>water_drop</mat-icon>
+            <div class="detail-info">
+              <span class="label">Humidity</span>
+              <span class="value">{{ weather.main.humidity }}%</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <mat-icon>air</mat-icon>
+            <div class="detail-info">
+              <span class="label">Wind Speed</span>
+              <span class="value">{{ weather.wind.speed }} m/s</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <mat-icon>arrow_downward</mat-icon>
+            <div class="detail-info">
+              <span class="label">Min Temp</span>
+              <span class="value">{{ weather.main.temp_min | number:'1.0-0' }}°C</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <mat-icon>arrow_upward</mat-icon>
+            <div class="detail-info">
+              <span class="label">Max Temp</span>
+              <span class="value">{{ weather.main.temp_max | number:'1.0-0' }}°C</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   `,
   styles: [`
     .weather-container {
-      padding: 20px;
-      max-width: 600px;
-      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      color: white;
+      padding: 1rem;
     }
-    .weather-info {
+
+    .weather-header {
       text-align: center;
-      padding: 20px;
+      margin-bottom: 2rem;
+
+      h2 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: 400;
+      }
+
+      .date {
+        margin: 0.5rem 0 0;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1rem;
+      }
     }
-    .temperature {
-      font-size: 48px;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-    .description {
-      font-size: 24px;
-      margin-bottom: 20px;
-      text-transform: capitalize;
-    }
-    .details {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .temp-range {
+
+    .weather-content {
       display: flex;
-      justify-content: space-around;
-      margin-top: 20px;
+      flex-direction: column;
+      gap: 2rem;
     }
-    img {
-      width: 100px;
-      height: 100px;
+
+    .main-weather {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .temperature-display {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .temp-value {
+      font-size: 6rem;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .temp-unit {
+      font-size: 2rem;
+      margin-top: 0.5rem;
+    }
+
+    .weather-icon {
+      text-align: center;
+
+      img {
+        width: 120px;
+        height: 120px;
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+      }
+
+      .weather-description {
+        margin: 0.5rem 0 0;
+        font-size: 1.2rem;
+        text-transform: capitalize;
+      }
+    }
+
+    .weather-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .detail-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      mat-icon {
+        font-size: 1.5rem;
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+
+    .detail-info {
+      display: flex;
+      flex-direction: column;
+
+      .label {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .value {
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .main-weather {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .temp-value {
+        font-size: 4rem;
+      }
+
+      .temp-unit {
+        font-size: 1.5rem;
+      }
+
+      .weather-details {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .weather-details {
+        grid-template-columns: 1fr;
+      }
     }
   `]
 })
@@ -75,5 +215,14 @@ export class WeatherDisplayComponent {
 
   getWeatherIcon(icon: string): string {
     return `https://openweathermap.org/img/wn/${icon}@2x.png`;
+  }
+
+  getCurrentDate(): string {
+    return new Date().toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
   }
 }

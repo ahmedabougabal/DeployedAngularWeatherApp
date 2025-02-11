@@ -1,4 +1,4 @@
-export interface GeocodingResposnse{
+export interface GeocodingResponse{
   name : string;
   lat: number ;
   lon: number ;

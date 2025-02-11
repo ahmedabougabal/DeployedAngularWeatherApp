@@ -1,8 +1,8 @@
-export const enviroment = {
-  production : false,
+export const environment = {
+  production: false,
   weatherApi: {
-  key: 'c262d66461ee81e8fce6ac38fa3f12d6',
-  baseUrl: 'https://api.openweathermap.org/data/3.0',
-  geocodingUrl: 'https://api.openweathermap.org/geo/1.0/direct'
+    key: 'YOUR_OPENWEATHER_API_KEY',
+    baseUrl: 'YOUR_OPENWEATHER_BASE_URL',
+    geocodingUrl: 'YOUR_GEOCODING_URL'
   }
 }

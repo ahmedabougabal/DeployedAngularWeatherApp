@@ -1,6 +1,42 @@
-# WeatherApp
+# WeatherApp (
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+
+  <img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="1000px" height="100px">
+
+# from this : 
+
+![image](https://github.com/user-attachments/assets/5c3ab8ed-4745-4e18-93cd-b50d1bb43651)
+
+
+# to this : 
+
+
+
+![image](https://github.com/user-attachments/assets/7e37d833-fd5d-4fa6-b517-05105bed74b4)
+
+
+  <img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="1000px" height="100px">
+  
+
+# Responsiveness
+
+
+![image](https://github.com/user-attachments/assets/4414a7af-22cd-4a1c-b243-dd42b5b39cbd)
+
+
+
+![image](https://github.com/user-attachments/assets/5968c94d-11e8-49d1-abec-2f1ecbbdbe5e)
+
+  <img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="1000px" height="100px">
+
+
+#POSTMAN API TESTING 
+
+![image](https://github.com/user-attachments/assets/f62a37d1-781a-41a3-8507-52b903750aad)
+
+  <img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="1000px" height="100px">
+
 
 ## Development server
 

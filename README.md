@@ -1,6 +1,11 @@
 # WeatherApp 
+**My first App [Deployment soon - may also add docker for easy installation]**
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+ `` This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6. ``
+
+  <img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="1000px" height="100px">
+
+# Crafted behind the scenes api fetching logic -for this beauty- first using typescript and some js for config files, with just a basic CSS UI... then Shifted the whole focus on implementing/improving a whole new stunning desgin for the app, I <3 gradient (you can notice a gradient-color scroll on smaller view ports)     
 
   <img src="https://github.com/Govindv7555/Govindv7555/blob/main/49e76e0596857673c5c80c85b84394c1.gif" width="1000px" height="100px">
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, map, of, switchMap } from 'rxjs';
-import { enviroment } from '../../enviroments/environment';
+import { enviroment } from '../../enviroments/enviroment.development';
 import { GeocodingResponse } from '../interfaces/geocoding.interface';
 import { WeatherResponse } from '../interfaces/weather.interface';
 

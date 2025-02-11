@@ -44,7 +44,7 @@ Thumbs.db
 # Environment files
 .env
 .env.*
-/src/environments/*.ts
-!/src/environments/environment.template.ts
-src/environments/environment.ts
-src/environments/environment.development.tssrc/environments/environment.development.template.ts
+/src/enviroments/*.ts
+!/src/enviroments/enviroment.template.ts
+src/enviroments/enviroment.ts
+src/enviroments/enviroment.development.tssrc/enviroments/enviroment.development.template.ts

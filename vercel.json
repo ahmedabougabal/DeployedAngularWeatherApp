@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/geo/1.0/:path*",
+      "destination": "https://api.openweathermap.org/geo/1.0/:path*"
+    },
+    {
+      "source": "/api/data/2.5/:path*",
+      "destination": "https://api.openweathermap.org/data/2.5/:path*"
+    }
+  ]
+}

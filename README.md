@@ -1,6 +1,6 @@
 # WeatherApp
 
-**My first App [Deployment soon - may also add docker for easy installation]**
+**My first App [Deployment soon - Docker Support Added - fixed issues related to angular CLI installation in development to make sure it runs smoothly]**
 
 `This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.`
 

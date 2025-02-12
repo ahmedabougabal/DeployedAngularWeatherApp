@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, map, of, switchMap } from 'rxjs';
-import { enviroment } from '../../enviroments/enviroment.development';
+import { enviroment } from '../../enviroments/enviroment';
 import { GeocodingResponse } from '../interfaces/geocoding.interface';
 import { WeatherResponse } from '../interfaces/weather.interface';
 
@@ -10,8 +10,6 @@ import { WeatherResponse } from '../interfaces/weather.interface';
 })
 export class WeatherService {
   private apiKey = enviroment.weatherApi.key;
-  private baseUrl = enviroment.weatherApi.baseUrl;
-  private geocodingUrl = enviroment.weatherApi.geocodingUrl;
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +24,7 @@ export class WeatherService {
   }
 
   private getCoordinates(city: string): Observable<GeocodingResponse | null> {
-    const url = `${this.geocodingUrl}?q=${encodeURIComponent(city)}&limit=1&appid=${this.apiKey}`;
+    const url = `/api/geo/1.0/direct?q=${encodeURIComponent(city)}&limit=1&appid=${this.apiKey}`;
     return this.http.get<GeocodingResponse[]>(url).pipe(
       map(response => response[0] || null),
       catchError(() => of(null))
@@ -34,7 +32,7 @@ export class WeatherService {
   }
 
   private getWeatherByCoordinates(lat: number, lon: number): Observable<WeatherResponse> {
-    const url = `${this.baseUrl}/weather?lat=${lat}&lon=${lon}&units=metric&appid=${this.apiKey}`;
+    const url = `/api/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${this.apiKey}`;
     return this.http.get<WeatherResponse>(url);
   }
 }

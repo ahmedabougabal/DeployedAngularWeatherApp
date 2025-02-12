@@ -5,6 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - WEATHER_API_KEY=${WEATHER_API_KEY}
+        - WEATHER_API_BASE_URL=${WEATHER_API_BASE_URL}
+        - WEATHER_API_GEOCODING_URL=${WEATHER_API_GEOCODING_URL}
     ports:
       - "4200:80"
     env_file:

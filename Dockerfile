@@ -1,32 +1,47 @@
 FROM node:20-alpine as build
 
+# Define build arguments
+ARG WEATHER_API_KEY
+ARG WEATHER_API_BASE_URL
+ARG WEATHER_API_GEOCODING_URL
+
+# Set environment variables from build args
+ENV WEATHER_API_KEY=$WEATHER_API_KEY
+ENV WEATHER_API_BASE_URL=$WEATHER_API_BASE_URL
+ENV WEATHER_API_GEOCODING_URL=$WEATHER_API_GEOCODING_URL
+
 WORKDIR /app
 
-#install angular CLI globally to solve the error '1.014 /bin/sh: ng: not found'
+# Install angular CLI globally
 RUN npm install -g @angular/cli
 
-# cp package files 
+# Copy package files 
 COPY package*.json ./
 
-# cmd to install dependencies
+# Install dependencies
 RUN npm install
 
-#copy project files into working dir
+# Copy project files
 COPY . .
 
-#cmd to build the app
-RUN npm run config && ng build --configuration=production
+# Create enviroment files and build
+RUN echo "API Key: $WEATHER_API_KEY" && \
+    node setup-env.js && \
+    echo "Enviroment files generated:" && \
+    ls -la src/enviroments/ && \
+    cat src/enviroments/enviroment.ts && \
+    ng build --configuration=production
 
-#production stage :)
+# Production stage
 FROM nginx:alpine
 
-# cp build assets from build stage 
+# Copy build assets
 COPY --from=build /app/dist/weather-app/browser /usr/share/nginx/html
 
-#copy nginx config 
+# Copy nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# exxposing the port for the container 
+# Expose port
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]

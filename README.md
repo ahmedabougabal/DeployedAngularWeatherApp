@@ -1,6 +1,17 @@
 # WeatherApp
 
-**My first App [Deployment soon - Docker Support Added - fixed issues related to angular CLI installation in development to make sure it runs smoothly]**
+**My first App [Deployed ✔️ - Docker Support Added - fixed issues related to angular CLI installation in development to make sure it runs smoothly]**
+
+![Tests Passing](https://img.shields.io/badge/tests-passing-brightgreen)
+
+[![Deployment](https://img.shields.io/badge/Deployed%20App-View%20Here-brightgreen?style=for-the-badge)](https://angular-weather-app-kappa.vercel.app/)
+
+![TypeScript](https://img.shields.io/badge/TypeScript-82.1%25-blue?style=for-the-badge&logo=typescript)
+![CSS](https://img.shields.io/badge/CSS-10.1%25-orange?style=for-the-badge&logo=css3)
+![JavaScript](https://img.shields.io/badge/JavaScript-6.1%25-yellow?style=for-the-badge&logo=javascript)
+![Other](https://img.shields.io/badge/Other-1.7%25-lightgrey?style=for-the-badge)
+
+
 
 `This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.`
 

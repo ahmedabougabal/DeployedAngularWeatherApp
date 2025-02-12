@@ -1,1 +1,7 @@
 <p>search works!</p>
+
+<div class="popular-cities">
+    <button mat-button *ngFor="let city of popularCities" (click)="searchCity(city)" class="city-chip">
+        {{ city }}
+    </button>
+</div>

@@ -1,11 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
 html, body {
   height: 100%;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #00feba, #5b548a);
+  background: linear-gradient(-45deg, #23d5ab, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Glassmorphic Error Snackbar */
@@ -53,6 +64,63 @@ html, body {
 
 .mat-mdc-form-field.mat-focused .mat-mdc-form-field-ripple {
   background-color: white !important;
+}
+
+/* Override Material Button Base Styles */
+.mat-mdc-button:not(:disabled).city-chip {
+  --mdc-text-button-label-text-color: #ffffff;
+  --mdc-text-button-container-color: transparent;
+  background: rgba(243, 243, 243, 0.15) !important;
+  border: 1px solid rgba(243, 243, 243, 0.3) !important;
+  border-radius: 20px !important;
+  padding: 8px 20px !important;
+  color: var(--mdc-text-button-label-text-color) !important;
+  font-weight: 500 !important;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin: 5px;
+  text-shadow: none;
+  min-width: unset !important;
+  line-height: normal !important;
+  height: auto !important;
+}
+
+.mat-mdc-button:not(:disabled).city-chip .mdc-button__label {
+  color: var(--mdc-text-button-label-text-color) !important;
+}
+
+.mat-mdc-button.mat-mdc-button.mat-mdc-button.mat-mdc-button.city-chip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(243, 243, 243, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.mat-mdc-button.mat-mdc-button.mat-mdc-button.mat-mdc-button.city-chip:hover {
+  transform: scale(1.05) !important;
+  background: rgba(243, 243, 243, 0.25) !important;
+  box-shadow: 0 0 20px rgba(243, 243, 243, 0.3) !important;
+}
+
+.mat-mdc-button.mat-mdc-button.mat-mdc-button.mat-mdc-button.city-chip:hover::before {
+  left: 100%;
+}
+
+/* Disable Material Ripple */
+.mat-mdc-button.mat-mdc-button.mat-mdc-button.mat-mdc-button.city-chip .mat-ripple,
+.mat-mdc-button.mat-mdc-button.mat-mdc-button.mat-mdc-button.city-chip .mdc-button__ripple {
+  display: none !important;
 }
 
 /* Animation Classes */

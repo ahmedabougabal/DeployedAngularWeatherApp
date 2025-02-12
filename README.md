@@ -108,7 +108,7 @@ cd weather-app
 
 ```env
 WEATHER_API_KEY=your_api_key_here
-WEATHER_API_BASE_URL=https://api.openweathermap.org/data/3.0
+WEATHER_API_BASE_URL=https://api.openweathermap.org/data/2.5
 WEATHER_API_GEOCODING_URL=https://api.openweathermap.org/geo/1.0/direct
 ```
 

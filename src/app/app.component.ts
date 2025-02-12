@@ -44,7 +44,6 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
   styles: [`
     .app-container {
       min-height: 100vh;
-      background: linear-gradient(135deg, #00feba, #5b548a);
       padding: 2rem;
       box-sizing: border-box;
     }

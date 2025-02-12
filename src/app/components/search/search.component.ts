@@ -29,7 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
                  placeholder="Enter city name"
                  (keyup.enter)="onSearch()"
                  class="search-input">
-          <button mat-icon-button matSuffix (click)="onSearch()" class="search-button">
+          <button mat-icon-button matSuffix (click)="onSearch()">
             <mat-icon>search</mat-icon>
           </button>
         </mat-form-field>
@@ -95,15 +95,6 @@ import { MatButtonModule } from '@angular/material/button';
 
       .mat-mdc-form-field-label {
         color: rgba(255, 255, 255, 0.7) !important;
-      }
-    }
-
-    .search-button {
-      color: white;
-      transition: transform 0.2s ease;
-
-      &:hover {
-        transform: scale(1.1);
       }
     }
 

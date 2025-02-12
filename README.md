@@ -6,11 +6,11 @@
 
 [![Deployment](https://img.shields.io/badge/Deployed%20App-View%20Here-brightgreen?style=for-the-badge)](https://angular-weather-app-kappa.vercel.app/)
 
-![TypeScript](https://img.shields.io/badge/TypeScript-82.1%25-blue?style=for-the-badge&logo=typescript)
-![CSS](https://img.shields.io/badge/CSS-10.1%25-orange?style=for-the-badge&logo=css3)
-![JavaScript](https://img.shields.io/badge/JavaScript-6.1%25-yellow?style=for-the-badge&logo=javascript)
-![Other](https://img.shields.io/badge/Other-1.7%25-lightgrey?style=for-the-badge)
-
+![TypeScript](https://img.shields.io/badge/TypeScript-45.6%25-blue?style=for-the-badge&logo=typescript)
+![HTML](https://img.shields.io/badge/HTML-41.8%25-red?style=for-the-badge&logo=html5)
+![CSS](https://img.shields.io/badge/CSS-7.3%25-orange?style=for-the-badge&logo=css3)
+![JavaScript](https://img.shields.io/badge/JavaScript-3.2%25-yellow?style=for-the-badge&logo=javascript)
+![Dockerfile](https://img.shields.io/badge/Dockerfile-2.1%25-blue?style=for-the-badge&logo=docker)
 
 
 `This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.`

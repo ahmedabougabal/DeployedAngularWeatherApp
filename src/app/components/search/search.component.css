@@ -1,0 +1,229 @@
+.weather-container {
+    min-height: 100vh;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    color: white;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.app-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.subtitle {
+    margin-top: 0.5rem;
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+.search-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-box {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.search-box h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+.search-description {
+    margin: 0.5rem 0 1.5rem;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+.search-input-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Override Material styles for dark theme */
+::ng-deep .mat-form-field {
+    width: 100%;
+}
+
+::ng-deep .mat-form-field-outline {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+::ng-deep .mat-form-field-flex {
+    border-radius: 8px !important;
+}
+
+::ng-deep .mat-input-element {
+    color: white !important;
+    caret-color: white !important;
+}
+
+::ng-deep .mat-form-field-label {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.search-icon {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.popular-cities-section {
+    text-align: center;
+}
+
+.popular-cities-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    font-weight: 400;
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+}
+
+.city-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 0.8rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.city-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.location-icon {
+    font-size: 1.2rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .weather-container {
+        padding: 1rem;
+    }
+
+    .app-header h1 {
+        font-size: 2rem;
+    }
+
+    .search-card {
+        padding: 1.5rem;
+    }
+
+    .search-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .cities-grid {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 565px) {
+    .weather-container {
+        padding: 1rem 0.5rem;
+    }
+
+    .app-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .search-card {
+        padding: 1.2rem;
+        border-radius: 15px;
+    }
+
+    .search-box h2 {
+        font-size: 1.3rem;
+    }
+
+    .search-description {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .popular-cities-section h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .cities-grid {
+        grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+        gap: 0.6rem;
+    }
+
+    .city-button {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+
+    .location-icon {
+        font-size: 1rem;
+        height: 1rem;
+        width: 1rem;
+    }
+}
+
+/* For very short heights */
+@media (max-height: 565px) {
+    .weather-container {
+        min-height: auto;
+        padding-top: 0.5rem;
+    }
+
+    .app-header {
+        margin-bottom: 1rem;
+    }
+
+    .search-card {
+        padding: 1rem;
+    }
+
+    .search-box {
+        margin-bottom: 1rem;
+    }
+
+    .cities-grid {
+        max-height: calc(100vh - 300px);
+        overflow-y: auto;
+        padding-right: 0.5rem;
+    }
+}

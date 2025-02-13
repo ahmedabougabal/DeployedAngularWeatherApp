@@ -21,7 +21,7 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
   ],
   template: `
     <div class="app-container">
-      <h1 class="app-title">Weather App</h1>
+      <h1 class="app-title">Weather Forecast App</h1>
       <div class="main-content">
         <div class="glass-container">
           <div class="search-section">

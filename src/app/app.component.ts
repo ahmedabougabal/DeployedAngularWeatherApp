@@ -39,6 +39,52 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
           </div>
         </div>
       </div>
+      <div class="animated-footer">
+        <div class="moving-text">
+          <span class="text-content">
+            <ng-container *ngFor="let char of footerText.split(''); let i = index">
+              <span [ngClass]="{
+                'palestine-p': char.toLowerCase() === 'p',
+                'palestine-a': char.toLowerCase() === 'a',
+                'palestine-l': char.toLowerCase() === 'l',
+                'palestine-e': char.toLowerCase() === 'e',
+                'palestine-s': char.toLowerCase() === 's',
+                'palestine-t': char.toLowerCase() === 't',
+                'palestine-i': char.toLowerCase() === 'i',
+                'palestine-n': char.toLowerCase() === 'n'
+              }" class="letter-spacing">{{char}}</span>
+            </ng-container>
+          </span>
+          <span class="text-content">
+            <ng-container *ngFor="let char of footerText.split(''); let i = index">
+              <span [ngClass]="{
+                'palestine-p': char.toLowerCase() === 'p',
+                'palestine-a': char.toLowerCase() === 'a',
+                'palestine-l': char.toLowerCase() === 'l',
+                'palestine-e': char.toLowerCase() === 'e',
+                'palestine-s': char.toLowerCase() === 's',
+                'palestine-t': char.toLowerCase() === 't',
+                'palestine-i': char.toLowerCase() === 'i',
+                'palestine-n': char.toLowerCase() === 'n'
+              }" class="letter-spacing">{{char}}</span>
+            </ng-container>
+          </span>
+          <span class="text-content">
+            <ng-container *ngFor="let char of footerText.split(''); let i = index">
+              <span [ngClass]="{
+                'palestine-p': char.toLowerCase() === 'p',
+                'palestine-a': char.toLowerCase() === 'a',
+                'palestine-l': char.toLowerCase() === 'l',
+                'palestine-e': char.toLowerCase() === 'e',
+                'palestine-s': char.toLowerCase() === 's',
+                'palestine-t': char.toLowerCase() === 't',
+                'palestine-i': char.toLowerCase() === 'i',
+                'palestine-n': char.toLowerCase() === 'n'
+              }" class="letter-spacing">{{char}}</span>
+            </ng-container>
+          </span>
+        </div>
+      </div>
     </div>
   `,
   styles: [`
@@ -46,65 +92,102 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
       min-height: 100vh;
       padding: 2rem;
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      position: relative;
     }
 
     .app-title {
+      color: white;
       text-align: center;
       margin: 0 0 2rem;
       font-size: 2.5rem;
       font-weight: 300;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      letter-spacing: 1px;
     }
 
     .main-content {
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      min-height: calc(100vh - 120px);
+      padding-bottom: 4rem;
     }
 
     .glass-container {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      padding: 2rem;
       width: 100%;
-      max-width: 1200px;
-      min-height: 600px;
-      display: flex;
-      overflow: hidden;
-    }
-
-    .search-section {
-      width: 300px;
-      border-right: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 2rem;
-    }
-
-    .weather-section {
-      flex: 1;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
+      max-width: 800px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .loading-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
     }
 
-    :host ::ng-deep {
-      .mat-mdc-progress-spinner {
-        --mdc-circular-progress-active-indicator-color: white;
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .animated-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+      overflow: hidden;
+    }
+
+    .moving-text {
+      display: inline-flex;
+      white-space: nowrap;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      transform: translateX(0);
+      animation: scroll 40s linear infinite;
+    }
+
+    .text-content {
+      display: inline-flex;
+      padding-right: 2rem;
+    }
+
+    .letter-spacing {
+      margin: 0 1px;
+      padding: 0 1px;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-33.33%);
       }
     }
+
+    .palestine-p { color: #2d5a27; } /* Dark green */
+    .palestine-a { color: #ffffff; } /* White */
+    .palestine-l { color: #2d5a27; } /* Dark green */
+    .palestine-e { color: #ffffff; } /* White */
+    .palestine-s { color: #2d5a27; } /* Dark green */
+    .palestine-t { color: #ffffff; } /* White */
+    .palestine-i { color: #e31b23; } /* Red */
+    .palestine-n { color: #e31b23; } /* Red */
+    .palestine-e { color: #2d5a27; } /* Dark green */
 
     @media (max-width: 768px) {
       .app-container {
@@ -112,24 +195,39 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
       }
 
       .glass-container {
-        flex-direction: column;
-        min-height: auto;
-      }
-
-      .search-section {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 1rem;
-      }
-
-      .weather-section {
-        padding: 1rem;
+        padding: 1.5rem;
       }
 
       .app-title {
         font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .moving-text {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 565px) {
+      .app-container {
+        padding: 0.5rem;
+      }
+
+      .glass-container {
+        padding: 1rem;
+      }
+
+      .app-title {
+        font-size: 1.8rem;
         margin-bottom: 1rem;
+      }
+
+      .moving-text {
+        font-size: 0.9rem;
+      }
+      .letter-spacing {
+        margin: 0 0.5px;
+        padding: 0 0.5px;
       }
     }
   `]
@@ -137,6 +235,7 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 export class AppComponent {
   weather: WeatherResponse | null = null;
   loading = false;
+  footerText = 'Made with ♥ by Gabal    -    Free Palestine Forever    -    From the River to the Sea Palestine Will Be Free    -    ';
 
   constructor(
     private weatherService: WeatherService,

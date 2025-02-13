@@ -142,7 +142,8 @@ import { MatButtonModule } from '@angular/material/button';
 export class SearchComponent {
   @Output() searched = new EventEmitter<string>();
   city: string = '';
-  popularCities = ['London', 'New York', 'Tokyo', 'Paris', 'Dubai'];
+  popularCities = ['Cairo', 'Gaza', 'Makkah', 'Medina', 'Damascus', 
+    'London', 'New York', 'Tokyo', 'Paris', 'Dubai'];
 
   onSearch() {
     if (this.city.trim()) {

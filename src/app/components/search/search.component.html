@@ -1,7 +1,42 @@
-<p>search works!</p>
+<div class="weather-container">
+  <div class="app-header">
+    <h1>Weather Forecast App</h1>
+    <p class="subtitle">Get real-time weather updates for any city</p>
+  </div>
 
-<div class="popular-cities">
-    <button mat-button *ngFor="let city of popularCities" (click)="searchCity(city)" class="city-chip">
-        {{ city }}
-    </button>
+  <div class="search-card">
+    <div class="search-box">
+      <h2>Search Location</h2>
+      <p class="search-description">
+        Enter a city name to get the current weather information
+      </p>
+
+      <div class="search-input-container">
+        <mat-form-field appearance="outline">
+          <input
+            matInput
+            type="text"
+            [formControl]="searchControl"
+            placeholder="Enter city name"
+          />
+          <mat-icon matSuffix class="search-icon">search</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="popular-cities-section">
+      <h3>Popular Cities</h3>
+      <div class="cities-grid">
+        <button
+          *ngFor="let city of popularCities"
+          (click)="searchCity(city)"
+          class="city-button"
+          [attr.aria-label]="'Get weather for ' + city"
+        >
+          <mat-icon class="location-icon">location_on</mat-icon>
+          <span>{{ city }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -104,6 +104,7 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
       font-size: 2.5rem;
       font-weight: 300;
       letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(128, 0, 32, 0.3);
     }
 
     .main-content {
@@ -115,14 +116,16 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
     }
 
     .glass-container {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
       border-radius: 20px;
       padding: 2rem;
       width: 100%;
       max-width: 800px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 
+        0 8px 32px rgba(128, 0, 32, 0.2),
+        0 4px 16px rgba(216, 86, 125, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.4);
     }
 
     .loading-container {
@@ -147,17 +150,22 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
       width: 100%;
       padding: 1rem;
       text-align: center;
-      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+      background: linear-gradient(to right, 
+        rgba(128, 0, 32, 0.1),
+        rgba(128, 0, 32, 0.1)
+      );
       overflow: hidden;
+      box-shadow: 0 -4px 16px rgba(128, 0, 32, 0.1);
     }
 
     .moving-text {
       display: inline-flex;
       white-space: nowrap;
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.95);
       font-size: 1rem;
       transform: translateX(0);
       animation: scroll 40s linear infinite;
+      text-shadow: 1px 1px 2px rgba(128, 0, 32, 0.3);
     }
 
     .text-content {
@@ -179,15 +187,44 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
       }
     }
 
-    .palestine-p { color: #2d5a27; } /* Dark green */
-    .palestine-a { color: #ffffff; } /* White */
-    .palestine-l { color: #2d5a27; } /* Dark green */
-    .palestine-e { color: #ffffff; } /* White */
-    .palestine-s { color: #2d5a27; } /* Dark green */
-    .palestine-t { color: #ffffff; } /* White */
-    .palestine-i { color: #e31b23; } /* Red */
-    .palestine-n { color: #e31b23; } /* Red */
-    .palestine-e { color: #2d5a27; } /* Dark green */
+    .palestine-p { 
+      color: #2d5a27; 
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    }
+    .palestine-a { 
+      color: #ffffff; 
+      text-shadow: 1px 1px 2px rgba(128, 0, 32, 0.3);
+    }
+    .palestine-l { 
+      color: #2d5a27; 
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    }
+    .palestine-e { 
+      color: #ffffff; 
+      text-shadow: 1px 1px 2px rgba(128, 0, 32, 0.3);
+    }
+    .palestine-s { 
+      color: #2d5a27; 
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    }
+    .palestine-t { 
+      color: #ffffff; 
+      text-shadow: 1px 1px 2px rgba(128, 0, 32, 0.3);
+    }
+    .palestine-i { 
+      color: #e31b23; 
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    }
+    .palestine-n { 
+      color: #e31b23; 
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    }
+
+    .search-section h2,
+    .search-description {
+      color: rgba(0, 0, 0, 0.8);
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+    }
 
     @media (max-width: 768px) {
       .app-container {

@@ -111,7 +111,7 @@ This project includes Docker support for easy deployment and development. Here's
 1. Clone the repository:
 
 ```bash
-git clone <your-repo-url>
+git clone <this repo's ssh>
 cd weather-app
 ```
 
